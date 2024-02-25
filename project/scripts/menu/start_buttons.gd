@@ -2,9 +2,6 @@ extends VBoxContainer
 
 # Ui element, handles the start menu
 
-@onready var Transition : Node = get_node("/root/SceneTransition") # To move between scenes
-@onready var Gamestate : Node = get_node("/root/GameState") # To toggle fullscreen
-
 var options : Resource = load("res://scenes/options.tscn") # To go to the sound settings
 var game : Resource = load("res://scenes/level_zero.tscn") # To start the game
 
@@ -16,7 +13,7 @@ func _ready() -> void :
 
 
 func _on_start_activate(_name : String) -> void :
-	Transition.change_to_scene(game)
+	SceneTransition.change_to_scene(game)
 
 
 
